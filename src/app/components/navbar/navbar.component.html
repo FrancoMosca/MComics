@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<nav class="nav">
+  <div class="logo">
+    <a routerLink="/home">
+      <img id="logo" src="../../../assets/img/sketch logo.png">
+    </a>
+  </div>
+  <div class="icons-container">
+    <a *ngIf="!loginService.isLoggedIn" routerLink="/login">
+      <img id="loginIcon" src="../../../assets/img/login.png">
+    </a>
+    <a *ngIf="loginService.isLoggedIn" (click)="loginService.logout()" type="button">
+      <img id="loginIcon" src="../../../assets/img/logout.png">
+    </a>
+
+    <a type="button" (click)="loginService.onClick()">
+      <img id="cartIcon" src="../../../assets/img/cart.png">
+      <span class="cart-items">3</span>
+    </a>
+  </div>
+</nav>
+
+    <!-- <span class="material-icons" type="button">shopping_cart</span>
+    <div class="dropdown">
+      <button class="btn-dropdown" (click)="toggleDropdown()">
+        <span class="material-icons">account_circle</span>
+      </button>
+      <div class="dropdown-content" [ngClass]="{'show': showDropdown}">
+        <button *ngIf="!loginService.isLoggedIn" routerLink="/login">Iniciar sesión</button>
+        <button *ngIf="!loginService.isLoggedIn" routerLink="/register">Registrarse</button>
+        <button *ngIf="loginService.isLoggedIn" (click)="loginService.logout()">Cerrar sesión</button>
+      </div>
+    </div> -->
+
+

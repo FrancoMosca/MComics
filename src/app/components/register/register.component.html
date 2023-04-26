@@ -1,0 +1,65 @@
+<!-- <div class="wrapper">
+    <div *ngIf="!loading" class="body">
+       <img class="logo" src="../../../assets/img/MComics.png" alt="Register">
+       <h1>Register</h1>
+       <form (ngSubmit)="register()" [formGroup]="registerUser">
+          <div class="form-floating mb-3">
+             <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+             <label>Email</label>
+             <span *ngIf="registerUser.get('email')?.hasError('required') && registerUser.get('email')?.touched" class="text-danger labelError">
+               El <strong>correo</strong> es requerido
+             </span>
+             <span *ngIf="registerUser.get('email')?.hasError('email') && registerUser.get('email')?.touched" class="text-danger labelError">
+               El <strong>correo</strong> es invalido
+             </span>
+           </div>
+           <div class="form-floating mb-3">
+             <input type="password" class="form-control" formControlName="password" placeholder="Password">
+             <label>Password</label>
+             <span *ngIf="registerUser.get('password')?.hasError('required') && registerUser.get('password')?.touched" class="text-danger labelError">
+               La <strong>contraseña</strong> es requerida
+             </span>
+             <span *ngIf="registerUser.get('password')?.hasError('minlength') && registerUser.get('password')?.touched" class="text-danger labelError">
+               La <strong>contraseña</strong> tiene que tener minimo 6 caracteres
+             </span>
+           </div>
+           <div class="form-floating mb-3">
+             <input type="password" class="form-control" formControlName="repeatPassword" placeholder="Repetir password">
+             <label>Repetir password</label>
+           </div>
+           <div class="d-grid gap-2">
+             <button class="btn btn-primary btn-lg" [disabled]="registerUser.invalid" type="submit">Registrarse</button>
+           </div>
+           <p class="mt-3">¿Ya tienes cuenta? <a routerLink="/login">Login</a></p>
+          </form>
+    </div> 
+    <app-spinner *ngIf="loading"></app-spinner>
+ </div> -->
+ 
+<div class="loginBox"> <img class="user" src="../../../assets/img/sketch logo.png" height="100px" width="100px">
+  <h3>Sign up</h3>
+  <form (ngSubmit)="register()" [formGroup]="registerUser">
+    <div class="inputBox">
+      <input id="uname" formControlName="email" type="text" name="Username" placeholder="Email">
+      <span *ngIf="registerUser.get('email')?.hasError('required') && registerUser.get('email')?.touched" class="text-danger labelError">
+        <strong>*</strong>
+      </span>
+      <span *ngIf="registerUser.get('email')?.hasError('email') && registerUser.get('email')?.touched" class="text-danger labelError">
+        <strong>*</strong>
+      </span>
+      <input id="pass" formControlName="password"type="password" name="Password" placeholder="Password">
+      <span *ngIf="registerUser.get('password')?.hasError('required') && registerUser.get('password')?.touched" class="text-danger labelError">
+        <strong>*</strong>
+      </span>
+      <span *ngIf="registerUser.get('password')?.hasError('minlength') && registerUser.get('password')?.touched" class="text-danger labelError">
+        <strong>*</strong>
+      </span>
+      <input id="pass" formControlName="repeatPassword"type="password" name="repeat Password" placeholder="Repeat password">  
+    </div> 
+      <input type="submit" [disabled]="registerUser.invalid" name="" value="Register">
+  </form>
+  <div class="text-center">
+      <a routerLink="/login" style="color: #59238F;">Sign-In</a>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
+</div>

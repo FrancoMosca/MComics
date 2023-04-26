@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<section class="w-fit bg-dcd1d1 mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5 mt-3">
+        <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl" *ngFor="let product of products | async">
+                <a routerLink="">
+                        <img src="{{ product.imgUrl }}" alt="Product" class="h-500 w-333 object-cover rounded-t-xl" />
+                </a>
+                <div class="px-4 py-3 w-72 bg-gradient-to-b from-darkpurple to-softpurple rounded-b-xl">
+                        <div class="inline-block">
+                                <span class="text-gray-400 mr-3 uppercase text-xs">{{ product.brand }}</span>
+                                <p class="text-lg font-bold text-white truncate block capitalize">{{ product.name }}</p>
+                                <div class="flex items-center">
+                                        <p class="text-lg font-semibold text-white cursor-auto my-3">${{ product.price }}</p>
+                                        <del>
+                                                <p class="text-sm text-gray-600 cursor-auto ml-2"></p>
+                                        </del>
+                                </div>
+                                <a routerLink="/shopping-cart">
+                                        <img width="20" height="20" id="cartIcon"  src="../../../assets/img/cart.png">
+                                </a>
+                        </div>
+                </div>
+                
+        </div>
+</section>
+      
+

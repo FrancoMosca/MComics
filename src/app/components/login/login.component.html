@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<div class="loginBox"> <img class="user" src="../../../assets/img/sketch logo.png" height="100px" width="100px">
+    <h3>Sign in</h3>
+    <form (ngSubmit)="login()" [formGroup]="loginService.userLogin">
+      <div class="inputBox">
+        <input id="uname" formControlName="email" type="text" name="Username" placeholder="Email">
+        <span *ngIf="loginService.userLogin.get('email')?.hasError('required') && loginService.userLogin.get('email')?.touched" class="text-danger labelError">
+          <strong>*</strong>
+        </span>
+        <span *ngIf="loginService.userLogin.get('email')?.hasError('email') && loginService.userLogin.get('email')?.touched" class="text-danger labelError">
+          <strong>*</strong>
+        </span>
+        <input id="pass" formControlName="password"type="password" name="Password" placeholder="Password"> 
+      </div> 
+        <input type="submit" [disabled]="loginService.userLogin.invalid" name="" value="Login">
+    </form>
+    <a routerLink="/forgotten-password">Forget Password<br> </a>
+    <div class="text-center">
+        <a routerLink="/register" style="color: #59238F;">Sign-Up</a>
+    </div>
+    <app-spinner *ngIf="loginService.loading"></app-spinner>
+</div>
